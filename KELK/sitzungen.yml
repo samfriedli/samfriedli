@@ -1,0 +1,47 @@
+---
+
+- name: Projekt Sitzung
+  date: 07.09.2021
+  agenda_items:
+    - status:
+        - todo:
+            - Index renaming
+            - Dashboard migration
+            - User permissions
+            - Life cycles
+            - Schweizmobil
+        - problems
+            - Index splitting will cause several dashbords to not work anymore
+            - How to handle user permissions / spaces
+            - External queries (scripts, etc).
+            - Data volume and compression
+        - what's next
+            - Dashboard Migration
+            - User migration
+        - timeline
+            - Dashboard migraion within next 2 weeks
+            - User migration within next 3 weeks
+    - open_questions:
+        - shop creates statistics directly out of kafka
+    - discussion: []
+    - conclusions:
+        - "Life cylces can be short if external data aggregation is granted."
+        - "All users may se everything. Not segregation of Spaces at the beginning needed."
+        - "Start a Poll within KOGIS on what is still missing on the new platform (once the users and logsources are migrated."
+        - "Schweizmobil migration to camptocamp migration timeline?"
+
+- name: Externe Dashboards
+  date: 10.11.21
+  agenda_items:
+    - discussion:
+        portals:
+          - name:  geoportail.lu
+            state: nice to have
+          - name: loge
+            states:
+              - "ltoed: dashboard loge"
+              - "script access el api"
+            todo:
+              - check if el api access is possible (authentication)
+              - can dashboards be exported via iframe
+            

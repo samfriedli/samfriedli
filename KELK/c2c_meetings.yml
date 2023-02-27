@@ -1,0 +1,26 @@
+---
+
+- name: Projekt Sitzung
+  date: 10.11.2021
+  agenda_items:
+    - discussion:
+        - open tasks
+        - INF-7015
+        - EL api key authentication for external scripts
+        - exporting via iframes (etc.) to publish dashboards on websites
+        - cloudfront logs missing
+        - some json messages are not displayed correctly
+    - conclusions:
+      topics:
+        - name: open tasks
+            - issue: ischtopo-286
+              description: missing indices?
+              severity: normal
+            - issue: ischtopo-288
+              description: "index custom_logs (data-1)"
+              severity: normal
+            - issue:  ischtopo-292
+              description: retention times
+              severity: high
+        - name: inf-7015 
+          description: should be discussed with gilbert. should varnish wmts logs be replaced with cloudfront wmts logs (not yet existing)

@@ -1,0 +1,51 @@
+Applikationen:
+ - viewer
+ - boreholes
+ - digi
+ - assets
+
+Assests:
+ - sizing
+
+(hostings) :
+ -> ocr worker node -> large node
+ -> obj detection -> large node
+
+ElasticSearch:
+ - Mit matthias baldi
+
+Connection:
+ - 5432 (pgsql)
+ - cluster intern: http
+ - extern https
+
+Ingress:
+  - traefik
+
+Storage:
+ - EFS
+ - S3:
+
+3 cluster:
+ - dev 
+ - int 
+ - prod 
+
+Cluster sizing:
+ - dev small
+ - int/prod same size
+
+Cognito:
+ - eIAM anbindung
+   - BIT?
+   - Von NGM -> Swisstopo-Account
+   - Migration
+
+DB Migration:
+ - -> nach swissgeol
+ - -> Zuständigkeiten
+
+GitHub:
+ - GeoAdmin -> Swisstopo
+
+Pro Applikation 1 Namespace
