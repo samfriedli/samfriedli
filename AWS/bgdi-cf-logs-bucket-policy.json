@@ -1,0 +1,65 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Permit access log delivery by for CloudFront service",
+            "Effect": "Allow",
+            "Principal": {
+                "Service": "delivery.logs.amazonaws.com"
+            },
+            "Action": [
+                "s3:PutBucketAcl",
+                "s3:GetBucketAcl"
+            ],
+            "Resource": "arn:aws:s3:::swisstopo-bgdi-cloudfront-logs"
+        },
+        {
+            "Sid": "Allow service Athena to list bucket objects",
+            "Effect": "Allow",
+            "Principal": {
+                "Service": "athena.amazonaws.com"
+            },
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::swisstopo-bgdi-cloudfront-logs"
+        },
+        {
+            "Sid": "Allow service Athena to get logs",
+            "Effect": "Allow",
+            "Principal": {
+                "Service": "athena.amazonaws.com"
+            },
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::swisstopo-bgdi-cloudfront-logs/*"
+        },
+        {
+            "Sid": "Allow awsstats role of aws-admin account to get logs",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::443130343732:role/awstats"
+            },
+            "Action": [
+                "s3:List*",
+                "s3:Get*"
+            ],
+            "Resource": [
+                "arn:aws:s3:::swisstopo-bgdi-cloudfront-logs/map.geo.admin.ch/*",
+                "arn:aws:s3:::swisstopo-bgdi-cloudfront-logs"
+            ]
+        },
+        {
+            "Sid": "Allow business-metrics account to get logs",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::441934332673:root"
+            },
+            "Action": [
+                "s3:List*",
+                "s3:Get*"
+            ],
+            "Resource": [
+                "arn:aws:s3:::swisstopo-bgdi-cloudfront-logs/*",
+                "arn:aws:s3:::swisstopo-bgdi-cloudfront-logs"
+            ]
+        }
+    ]
+}
