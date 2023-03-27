@@ -1,0 +1,3 @@
+# Need bucket versioning obviously
+
+aws --profile aws-3d s3api list-object-versions --bucket data.geo.admin.ch --prefix ch.bav.kataster-belasteter-standorte-oev/ --output json --query 'DeleteMarkers[?IsLatest==`true`].{Key:Key, VId:VersionId, mtime:LastModified}' | jq '.[] | select(.mtime | startswith("2023-03-27")) | "--key " + .Key +  " --version-id " + .VId' | sed -e 's/\"//g' | xargs -L1 aws --profile aws-3d s3api delete-object --bucket data.geo.admin.ch | tee -a .tmp/delete_log
