@@ -1,121 +1,121 @@
 {
-    "Version": "2008-10-17",
-    "Statement": [
-        {
-            "Sid": "allow-get-from-proxy",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "*"
-            },
-            "Action": [
-                "s3:List*",
-                "s3:Get*"
-            ],
-            "Resource": "arn:aws:s3:::bfj3jexwekgw4htsqabc-aerialimages/*",
-            "Condition": {
-                "IpAddress": {
-                    "aws:SourceIp": [
-                        "193.5.216.100/32",
-                        "54.246.58.192/32",
-                        "10.220.0.0/21",
-                        "54.194.202.49/32",
-                        "54.194.196.86/32",
-                        "128.179.66.4/32",
-                        "54.74.39.131/32",
-                        "54.74.148.173/32",
-                        "193.5.216.70/32",
-                        "54.194.151.117/32"
-                    ]
-                }
-            }
-        },
-        {
-            "Sid": "allow-get-from-testing-account",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "*"
-            },
-            "Action": [
-                "s3:List*",
-                "s3:Get*"
-            ],
-            "Resource": "arn:aws:s3:::bfj3jexwekgw4htsqabc-aerialimages/*",
-            "Condition": {
-                "StringEquals": {
-                    "aws:sourceVpce": "vpce-12b3537b"
-                }
-            }
-        },
-        {
-            "Sid": "allow-get-aws-admin-vpc-endpoint",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "*"
-            },
-            "Action": [
-                "s3:List*",
-                "s3:Get*"
-            ],
-            "Resource": "arn:aws:s3:::bfj3jexwekgw4htsqabc-aerialimages/*",
-            "Condition": {
-                "StringEquals": {
-                    "aws:sourceVpce": "vpce-4c8b6b25"
-                }
-            }
-        },
-        {
-            "Sid": "allow-put-from-tileforge",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "arn:aws:iam::592950523951:root"
-            },
-            "Action": [
-                "s3:ListBucket",
-                "s3:PutObject"
-            ],
-            "Resource": [
-                "arn:aws:s3:::bfj3jexwekgw4htsqabc-aerialimages/*",
-                "arn:aws:s3:::bfj3jexwekgw4htsqabc-aerialimages"
-            ]
-        },
-        {
-            "Sid": "allow-ro-access-to-s3tilesreader",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "AIDAJRADGGTT4CYGSSTTM"
-            },
-            "Action": [
-                "s3:List*",
-                "s3:Get*"
-            ],
-            "Resource": [
-                "arn:aws:s3:::bfj3jexwekgw4htsqabc-aerialimages/*",
-                "arn:aws:s3:::bfj3jexwekgw4htsqabc-aerialimages"
-            ]
-        },
-        {
-            "Sid": "allow-ro-access-to-",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "AIDAJRADGGTT4CYGSSTTM"
-            },
-            "Action": [
-                "s3:List*",
-                "s3:Get*"
-            ],
-            "Resource": [
-                "arn:aws:s3:::bfj3jexwekgw4htsqabc-aerialimages/*",
-                "arn:aws:s3:::bfj3jexwekgw4htsqabc-aerialimages"
-            ]
-        },
-        {
-            "Sid": "Stmt1355305546673",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "AIDAJCSR2SACJMB4JB5Q6"
-            },
-            "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::bfj3jexwekgw4htsqabc-aerialimages/*"
-        }
-    ]
+	"Version": "2008-10-17",
+	"Statement": [
+		{
+			"Sid": "allow-get-from-proxy",
+			"Effect": "Allow",
+			"Principal": {
+				"AWS": "*"
+			},
+			"Action": [
+				"s3:List*",
+				"s3:Get*"
+			],
+			"Resource": "arn:aws:s3:::bfj3jexwekgw4htsqabc-aerialimages/*",
+			"Condition": {
+				"IpAddress": {
+					"aws:SourceIp": [
+						"193.5.216.100/32",
+						"54.246.58.192/32",
+						"10.220.0.0/21",
+						"54.194.202.49/32",
+						"54.194.196.86/32",
+						"128.179.66.4/32",
+						"54.74.39.131/32",
+						"54.74.148.173/32",
+						"193.5.216.70/32",
+						"54.194.151.117/32"
+					]
+				}
+			}
+		},
+		{
+			"Sid": "allow-get-from-testing-account",
+			"Effect": "Allow",
+			"Principal": {
+				"AWS": "*"
+			},
+			"Action": [
+				"s3:List*",
+				"s3:Get*"
+			],
+			"Resource": "arn:aws:s3:::bfj3jexwekgw4htsqabc-aerialimages/*",
+			"Condition": {
+				"StringEquals": {
+					"aws:sourceVpce": "vpce-12b3537b"
+				}
+			}
+		},
+		{
+			"Sid": "allow-get-aws-admin-vpc-endpoint",
+			"Effect": "Allow",
+			"Principal": {
+				"AWS": "*"
+			},
+			"Action": [
+				"s3:List*",
+				"s3:Get*"
+			],
+			"Resource": "arn:aws:s3:::bfj3jexwekgw4htsqabc-aerialimages/*",
+			"Condition": {
+				"StringEquals": {
+					"aws:sourceVpce": "vpce-4c8b6b25"
+				}
+			}
+		},
+		{
+			"Sid": "allow-put-from-tileforge",
+			"Effect": "Allow",
+			"Principal": {
+				"AWS": "arn:aws:iam::592950523951:root"
+			},
+			"Action": [
+				"s3:ListBucket",
+				"s3:PutObject"
+			],
+			"Resource": [
+				"arn:aws:s3:::bfj3jexwekgw4htsqabc-aerialimages/*",
+				"arn:aws:s3:::bfj3jexwekgw4htsqabc-aerialimages"
+			]
+		},
+		{
+			"Sid": "allow-ro-access-to-s3tilesreader",
+			"Effect": "Allow",
+			"Principal": {
+				"AWS": "AIDAJRADGGTT4CYGSSTTM"
+			},
+			"Action": [
+				"s3:List*",
+				"s3:Get*"
+			],
+			"Resource": [
+				"arn:aws:s3:::bfj3jexwekgw4htsqabc-aerialimages/*",
+				"arn:aws:s3:::bfj3jexwekgw4htsqabc-aerialimages"
+			]
+		},
+		{
+			"Sid": "allow-ro-access-to-",
+			"Effect": "Allow",
+			"Principal": {
+				"AWS": "AIDAJRADGGTT4CYGSSTTM"
+			},
+			"Action": [
+				"s3:List*",
+				"s3:Get*"
+			],
+			"Resource": [
+				"arn:aws:s3:::bfj3jexwekgw4htsqabc-aerialimages/*",
+				"arn:aws:s3:::bfj3jexwekgw4htsqabc-aerialimages"
+			]
+		},
+		{
+			"Sid": "Stmt1355305546673",
+			"Effect": "Allow",
+			"Principal": {
+				"AWS": "AIDAJCSR2SACJMB4JB5Q6"
+			},
+			"Action": "s3:GetObject",
+			"Resource": "arn:aws:s3:::bfj3jexwekgw4htsqabc-aerialimages/*"
+		}
+	]
 }
