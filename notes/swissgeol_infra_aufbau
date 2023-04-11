@@ -1,0 +1,21 @@
+asset.swissgeol.ch:
+	1. Aufbau INT k8s cluster in swisstopo-swissgeol
+	2. Aufbau PostGreSQL DB (snapshoting)
+	3. Aufbau S3 bucket assest-int-swissgeol-swissgeol (versioning enabled)
+	4. DNS record: int.assets.swissgeol.ch -> k8s
+	5. Storage: EBS/EFS?
+	7. Backup: 
+       - Backup auf der Cloud
+       - Backup intern (sync Cloud -> BVNET)
+    8. Monitoring:
+       - Pingdom
+       - Infra (AMP)
+
+Fragen:
+  - Container registry (GitHub oder AWS)
+  - Mailrelay für asset?
+  - GitHub permission
+
+Fragen Swisstopo/C2C:
+  - Müssen auf der Cloud veränderte Daten (assests) swisstopo-intern backuped werden?  
+  - eIAM integration

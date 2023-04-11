@@ -42,8 +42,10 @@ Cognito:
    - Migration
 
 DB Migration:
- - -> nach swissgeol
- - -> Zuständigkeiten
+ - nach swissgeol
+ - Zuständigkeiten
+   - Swisstopo oder Lambda-IT (swisstopo-central-databases)
+   
 
 GitHub:
  - GeoAdmin -> Swisstopo
