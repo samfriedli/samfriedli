@@ -3,7 +3,7 @@ asset.swissgeol.ch:
 	2. Aufbau PostGreSQL DB (snapshoting)
 	3. Aufbau S3 bucket assest-int-swissgeol-swissgeol (versioning enabled)
 	4. DNS record: int.assets.swissgeol.ch -> k8s
-	5. Storage: EBS/EFS?
+	5. Storage: EFS
 	7. Backup: 
        - Backup auf der Cloud
        - Backup intern (sync Cloud -> BVNET)
